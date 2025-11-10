@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/8/2025 4:55:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ENVY"
+  DTS:CreatorName="ENVY\mahar"
+  DTS:DTSID="{58849B7D-85D8-4A73-ADBF-28AB75756F0A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{D5470E3B-6D8F-46DA-8D17-89652DF3F892}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>

@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/8/2025 2:44:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ENVY"
+  DTS:CreatorName="ENVY\mahar"
+  DTS:DTSID="{C69966AC-B0E0-4ACE-B8C0-E7A2F9AFA6AF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{9522C29C-8394-4057-9583-3479C6062395}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.A24_ODS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8cc97e93-9728-4258-b8c0-611a68494286}"
+      DTS:ObjectName="localhost.A24_ODS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=A24_ODS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{D8B4ED65-C413-4724-BF32-1CD85CE827DD}localhost.A24_STA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\2018 data transfer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CDD62A04-3D4B-4A44-81D5-8536BCFDEBF5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2018 data transfer"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8cc97e93-9728-4258-b8c0-611a68494286}"
+          SQLTask:SqlStatementSource="INSERT INTO ODS.Allyears (&#xA;    CallTimestamp,&#xA;    CallType,&#xA;    EmployeeID,&#xA;    CallDuration,&#xA;    WaitTime,&#xA;    CallAbandoned,&#xA;    LoadDate,&#xA;    CallDate,&#xA;    CallTime&#xA;)&#xA;SELECT &#xA;    CallTimestamp,&#xA;    CallType,&#xA;    EmployeeID,&#xA;    CallDuration,&#xA;    WaitTime,&#xA;    CallAbandoned,&#xA;    LoadDate,&#xA;    CallDate,&#xA;    CallTime&#xA;FROM ODS.CallsData2018;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\2019 data transfer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{19fcccc7-68f9-4f84-bbea-7328cdda64e5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2019 data transfer"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8cc97e93-9728-4258-b8c0-611a68494286}"
+          SQLTask:SqlStatementSource="INSERT INTO ODS.Allyears (&#xA;    CallTimestamp,&#xA;    CallType,&#xA;    EmployeeID,&#xA;    CallDuration,&#xA;    WaitTime,&#xA;    CallAbandoned,&#xA;    LoadDate,&#xA;    CallDate,&#xA;    CallTime&#xA;)&#xA;SELECT &#xA;    CallTimestamp,&#xA;    CallType,&#xA;    EmployeeID,&#xA;    CallDuration,&#xA;    WaitTime,&#xA;    CallAbandoned,&#xA;    LoadDate,&#xA;    CallDate,&#xA;    CallTime&#xA;FROM ODS.CallsData2019;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\2020 data transfer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9057f524-968b-4ce8-a8cd-9edc4896b12e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2020 data transfer"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8cc97e93-9728-4258-b8c0-611a68494286}"
+          SQLTask:SqlStatementSource="INSERT INTO ODS.Allyears (&#xA;    CallTimestamp,&#xA;    CallType,&#xA;    EmployeeID,&#xA;    CallDuration,&#xA;    WaitTime,&#xA;    CallAbandoned,&#xA;    LoadDate,&#xA;    CallDate,&#xA;    CallTime&#xA;)&#xA;SELECT &#xA;    CallTimestamp,&#xA;    CallType,&#xA;    EmployeeID,&#xA;    CallDuration,&#xA;    WaitTime,&#xA;    CallAbandoned,&#xA;    LoadDate,&#xA;    CallDate,&#xA;    CallTime&#xA;FROM ODS.CallsData2020;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clean &amp; Deduplicate Call Records in ODS Allyears"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b9a2b1d0-e7f9-48a0-9807-69b0599da784}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean &amp; Deduplicate Call Records in ODS Allyears"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8cc97e93-9728-4258-b8c0-611a68494286}"
+          SQLTask:SqlStatementSource="-- Convert duration &amp; wait time to INT&#xA;ALTER TABLE ODS.Allyears ALTER COLUMN CallDuration INT;&#xA;ALTER TABLE ODS.Allyears ALTER COLUMN WaitTime INT;&#xA;&#xA;&#xA;ALTER TABLE ODS.AllYears ALTER COLUMN CallAbandoned INT;&#xA;&#xA;&#xA;&#xA;DELETE FROM ODS.Allyears&#xA;WHERE CallKey NOT IN (&#xA;    SELECT MIN(CallKey)&#xA;    FROM ODS.Allyears&#xA;    GROUP BY EmployeeID, CallDate, CallTime&#xA;);&#xA;&#xA;&#xA;DELETE FROM ODS.Allyears&#xA;WHERE CallTimestamp IS NULL;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data hygene"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{f651c739-1581-46cb-accc-f97e3c39a095}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data hygene"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8cc97e93-9728-4258-b8c0-611a68494286}"
+          SQLTask:SqlStatementSource="UPDATE ODS.Allyears&#xA;SET EmployeeID = LTRIM(RTRIM(EmployeeID)),&#xA;    CallType = LTRIM(RTRIM(CallType));&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Null and corrupt check"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{640400a9-4d73-486d-88f0-c7df1508ed40}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Null and corrupt check"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8cc97e93-9728-4258-b8c0-611a68494286}"
+          SQLTask:SqlStatementSource="SELECT &#xA;    COUNT(*) AS Null_EmployeeID FROM ODS.Allyears WHERE EmployeeID IS NULL OR EmployeeID = '';&#xA;&#xA;SELECT &#xA;    COUNT(*) AS Null_CallType FROM ODS.Allyears WHERE CallType IS NULL;&#xA;&#xA;SELECT &#xA;    COUNT(*) AS NegativeDurations FROM ODS.Allyears WHERE CallDuration &lt; 0 OR WaitTime &lt; 0;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{320D5107-86E8-4984-ACCD-3670A79973FE}"
+      DTS:From="Package\2018 data transfer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\2019 data transfer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3747E645-0335-4E61-8202-C8A7078A5803}"
+      DTS:From="Package\2019 data transfer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\2020 data transfer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{261801CA-5F00-4E1C-8D4B-6114639B9111}"
+      DTS:From="Package\2020 data transfer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Clean &amp; Deduplicate Call Records in ODS Allyears" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{0C184288-D977-44DD-8433-49B35D9BAA63}"
+      DTS:From="Package\Clean &amp; Deduplicate Call Records in ODS Allyears"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Data hygene" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{C03DCFD9-3E8D-4F39-A793-501B63DADE43}"
+      DTS:From="Package\Data hygene"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Null and corrupt check" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164.888888888889,41.7777777777778"
+          Id="Package\2018 data transfer"
+          TopLeft="486.666643702322,68.2499960046262" />
+        <NodeLayout
+          Size="164.888888888889,41.7777777777778"
+          Id="Package\2019 data transfer"
+          TopLeft="493.020810069155,157.027774543428" />
+        <NodeLayout
+          Size="164.888888888889,41.7777777777778"
+          Id="Package\2020 data transfer"
+          TopLeft="500.937476362257,225.957339958435" />
+        <NodeLayout
+          Size="317.777777777778,41.7777777777778"
+          Id="Package\Clean &amp; Deduplicate Call Records in ODS Allyears"
+          TopLeft="426.874979857046,310.689477855335" />
+        <NodeLayout
+          Size="139.111111111112,41.7777777777778"
+          Id="Package\Data hygene"
+          TopLeft="517.708308904225,388.374977264421" />
+        <NodeLayout
+          Size="184.444444444445,41.7777777777778"
+          Id="Package\Null and corrupt check"
+          TopLeft="487.604143658084,475.179541633021" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="572.288171330183,110.027773782404">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0000007610236"
+              Start="0,0"
+              End="0,39.5000007610236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5000007610236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="579.423587660151,198.805552321205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.1517876372291"
+              Start="0,0"
+              End="0,19.6517876372291">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6517876372291" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="584.572894776318,267.735117736212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.9543601191222"
+              Start="0,0"
+              End="0,35.4543601191222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4543601191222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="586.513866602858,352.467255633112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9077216313091"
+              Start="0,0"
+              End="0,28.4077216313091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4077216313091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="583.545115170044,430.152755042199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.0267865908219"
+              Start="0,0"
+              End="0,37.5267865908219">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5267865908219" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
